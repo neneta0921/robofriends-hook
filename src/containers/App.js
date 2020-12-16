@@ -2,9 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import CardList from '../components/CardList';
+import ErrorBoundry from '../components/ErrorBoundry';
+import Header from '../components/Header'
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundry';
+
 import './App.css';
 
 import { requestRobots, setSearchField } from '../actions';
@@ -47,7 +49,7 @@ class App extends Component {
       (
         <Fragment>
           <div className="tc">
-            <h1 className="f1">RoboFriends</h1>
+            <Header />
             <SearchBox searchChange={onSearchChange} />
             <Scroll>
               <ErrorBoundry>

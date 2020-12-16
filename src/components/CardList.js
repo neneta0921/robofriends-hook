@@ -2,9 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 const CardList = ({ robots }) => {
-  // if (true) {
-  //   throw new Error('NOOOOOO!');
-  // }
+  console.log('CardList');
   return (
     <React.Fragment>
       {robots.map((user, i) => {

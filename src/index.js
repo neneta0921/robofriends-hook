@@ -1,3 +1,8 @@
+// import './wdyr'; // <--- first import
+
+// import 'react-hot-loader';
+// import {hot} from 'react-hot-loader/root';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -13,9 +18,12 @@ import { searchRobots, requestRobots } from './reducers';
 
 const logger = createLogger();
 
+// const HotApp = hot(App);
+
 const rootReducer = combineReducers({ searchRobots, requestRobots })
 const store =
-  createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
+  createStore(rootReducer, applyMiddleware(thunkMiddleware))
+  // createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +33,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// ReactDOM.render(<HotApp/>, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
